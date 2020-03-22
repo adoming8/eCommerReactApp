@@ -5,6 +5,9 @@ const serviceAccount = require("./ServiceAccountKey.json");
 const express = require('express');
 const app = express();
 
+// Setting up enviromental variables
+require('dotenv').config();
+
 
 // initializing the SDK
 admin.initializeApp({
@@ -17,7 +20,7 @@ const db = admin.firestore();
 // Initinalize Firebase
   //web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyCdrXPql53s2opzpm4jKoMU0qU1jIn4Yco",
+    apiKey: process.env.apiKey,
     authDomain: "socialmediaapp-290c1.firebaseapp.com",
     databaseURL: "https://socialmediaapp-290c1.firebaseio.com",
     projectId: "socialmediaapp-290c1",
