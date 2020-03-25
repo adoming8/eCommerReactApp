@@ -1,5 +1,5 @@
 
-const { admin } = require('./admin')
+const { admin, db } = require('./admin')
 
 //Middleware Authentication
 module.exports = (req, res, next) => {
@@ -39,7 +39,7 @@ module.exports = (req, res, next) => {
     .auth()
     .verifyIdToken(idToken)
     .then(decodedToken => {
-      console.log("ID Token correctly decoded", decodedToken);
+      // console.log("ID Token correctly decoded", decodedToken);
       req.user = decodedToken;
       return db
         .collection("users")

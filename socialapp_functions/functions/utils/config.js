@@ -1,3 +1,4 @@
+
 const serviceAccount = require("../ServiceAccountKey.json");
 
 // Setting up enviromental variables

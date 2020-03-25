@@ -5,7 +5,8 @@ const functions = require("firebase-functions");
 
 // initializing the app
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
+    credential: admin.credential.cert(serviceAccount),
+    storageBucket: "socialmediaapp-290c1.appspot.com"
   }); 
 
 // Initializing an instance of cloud firestore 
