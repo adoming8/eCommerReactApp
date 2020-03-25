@@ -104,9 +104,13 @@ exports.uploadImage = (req, res) => {
 
     busboy.on( 'file', (fieldname, file, filename, encoding, mimetype) => { // file event
 
-        console.log(fieldname);
-        console.log(filename);
-        console.log(mimetype);
+        // console.log(fieldname);
+        // console.log(filename);
+        // console.log(mimetype);
+
+        if(mimetype !== 'image/jpeg' && mimetype !== 'image/png'){
+            return res.status(400).json({ error: 'Wrong file type submitted'})
+        }
 
         // my.image.png (need the png extension)
         const imageExtension = filename.split('.')[filename.split('.').length -1];
