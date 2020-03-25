@@ -1,8 +1,8 @@
-// reference file
+// reference file since Firebase is a schemeless db
 
 let db = {
     users:[
-        {
+        { // basic user info
             userId: 'dh23gg5h67g578j5gf89',
             email: 'alfredo@email.com',
             createdAt: '2020-03-21T17:10:50.205Z',

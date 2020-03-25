@@ -146,3 +146,7 @@ exports.uploadImage = (req, res) => {
     })
     busboy.end(req.rawBody);
 };
+
+exports.addUserDetails = (req, res) => {
+
+};

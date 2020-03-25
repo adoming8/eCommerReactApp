@@ -1,7 +1,8 @@
 
 const functions = require("firebase-functions");
+
 const { getAllScreams, postOneScream } = require('./handlers/screams')
-const { signup, login, uploadImage } = require('./handlers/users')
+const { signup, login, uploadImage, addUserDetails } = require('./handlers/users')
 
 const validateFBIdToken = require('./utils/middleware')
 
@@ -17,6 +18,8 @@ app.post('/scream', validateFBIdToken, postOneScream);
 app.post('/signup', signup);
 app.post('/login', login);
 app.post('/user/image', validateFBIdToken ,uploadImage);
+app.post('/user', validateFBIdToken ,addUserDetails);
+
 
 
 // https://baseurl.com/api/
