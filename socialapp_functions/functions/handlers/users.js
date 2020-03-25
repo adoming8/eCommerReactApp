@@ -8,9 +8,9 @@ firebase.initializeApp(config);
 
 
 
-const { validateSignupData, validateLoginData } = require('../utils/validators');
+const { validateSignupData, validateLoginData, reduceUserDetails } = require('../utils/validators');
 
-
+// Sign up user
 exports.signup = (req, res) => {
     const newUser = {
         email: req.body.email,
@@ -64,8 +64,9 @@ exports.signup = (req, res) => {
                 return res.status(500).json({ error: err.code }) // 500 server error
             }
         });
-}
+};
 
+// Log user in
 exports.login = (req, res) => {
     const user = {
         email: req.body.email,
@@ -89,8 +90,23 @@ exports.login = (req, res) => {
                 return res.status(403).json({ general: "Sorry, wrong credentials. Please try again!"}); // 403 unauthorized
             } else return res.status(500).json({ error: err.code})
         });
-}
+};
 
+// Add user profile details
+exports.addUserDetails = (req, res) => {
+    let userDetails = reduceUserDetails(req.body);
+
+    db.doc(`/users/${req.user.handle}`).update(userDetails)
+    .then( () => {
+        return res.json({ message: 'Details added successfully'});
+    })
+    .catch( err => {
+        console.error(err);
+        return res.status(500).json({error: err.code})
+    });
+};
+
+// Upload profile image for user
 exports.uploadImage = (req, res) => {
     const BusBoy = require('busboy');
     const path = require('path');
@@ -145,8 +161,4 @@ exports.uploadImage = (req, res) => {
         })
     })
     busboy.end(req.rawBody);
-};
-
-exports.addUserDetails = (req, res) => {
-
 };
