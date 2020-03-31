@@ -22,8 +22,6 @@ app.post('/user', validateFBIdToken ,addUserDetails);
 
 
 
-// https://baseurl.com/api/
-
 exports.api = functions.https.onRequest(app);
 
 
