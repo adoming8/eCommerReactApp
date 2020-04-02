@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import Navlogo from '../logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css";
-import styled from 'styled-components'
 import {ButtonStyle} from "./ButtonStyle"
 
 
