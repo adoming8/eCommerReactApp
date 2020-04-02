@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Product from './Product'
+import Product from '../pages/Product'
 import TitleStyle from './TitleStyle'
 import {ProductConsumer} from '../context'
 
@@ -10,7 +10,7 @@ export default class ProductList extends Component {
         <div className="py-5">
           <div className="container">
             {/* row for the product */}
-            <TitleStyle name="our" title="Inventory" />
+            <TitleStyle name="our" title="Goodies" />
             <div className="row">
               {/* {JSON.stringify(storeProducts)} */}
               <ProductConsumer>

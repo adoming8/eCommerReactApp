@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ProductConsumer } from "../context";
 import { Link } from "react-router-dom";
-import { ButtonStyle } from "./ButtonStyle";
+import { ButtonStyle } from "../components/ButtonStyle";
 
 export default class Details extends Component {
   render() {
@@ -32,7 +32,7 @@ export default class Details extends Component {
                 </div>
                 {/* product info txt */}
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-                  <h2>model:{title}</h2>
+                  <h2>Dessert Type: {title}</h2>
                   <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
                     made by: <span className="text-uppercase ">{company}</span>
                   </h4>

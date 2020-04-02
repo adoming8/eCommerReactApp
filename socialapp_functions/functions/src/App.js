@@ -3,10 +3,11 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './components/Navbar'
+import Home from './pages/Home'
 import ProductList from './components/ProductList'
-import Details from './components/Details'
-import Cart from './components/Cart'
-import Default from './components/Default'
+import Details from './pages/Details'
+import Cart from './pages/Cart'
+import Default from './pages/Default'
 import Modal from './components/Modal'
 
 
@@ -14,9 +15,11 @@ import Modal from './components/Modal'
   render() {
     return (
       <>
+
       <Navbar></Navbar>
       <Switch>
-        <Route exact path='/' component={ProductList}></Route>
+        <Route exact path='/' component={Home}></Route>
+        <Route exact path='/products' component={ProductList}></Route>
         <Route path='/details' component={Details}></Route>
         <Route path='/cart' component={Cart}></Route>
         <Route  component={Default}></Route>

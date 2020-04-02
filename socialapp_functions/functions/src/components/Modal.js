@@ -3,7 +3,7 @@ import { ProductConsumer } from "../context";
 import { ButtonStyle } from "./ButtonStyle";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-import { CartBtnStyle } from './Details'
+import { CartBtnStyle } from '../pages/Details'
 
 
 export default class Modal extends Component {
@@ -27,7 +27,7 @@ export default class Modal extends Component {
                       <h5 className='text-muted'>{title}</h5>
                       <h5 className='text-muted'>price: $ {price}</h5>
                       <Link to='/'>
-                        <ButtonStyle style={CartBtnStyle} onClick={()=>closeModal()}>
+                        <ButtonStyle className='cartBtn' style={CartBtnStyle} onClick={()=>closeModal()}>
                           continue shopping
                         </ButtonStyle>
                       </Link>
