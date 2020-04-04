@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Product from '../pages/Product'
 import TitleStyle from './TitleStyle'
-import {ProductConsumer} from '../context'
+import {ProductConsumer} from '../contextApi'
 
 export default class ProductList extends Component {
   render() {

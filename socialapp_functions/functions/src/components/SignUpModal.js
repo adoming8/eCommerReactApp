@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { CartBtnStyle } from '../pages/Details'
 
 
-export default class Modal extends Component {
+export default class SignUpModal extends Component {
   render() {
     return (
       <ProductConsumer>
@@ -31,9 +31,9 @@ export default class Modal extends Component {
                           continue shopping
                         </ButtonStyle>
                       </Link>
-                      <Link to='/cart'>
+                      <Link to='/'>
                         <ButtonStyle onClick={()=>closeModal()}>
-                          go to cart
+                          Home
                         </ButtonStyle>
                       </Link>
                     </div>

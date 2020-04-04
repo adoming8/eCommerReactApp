@@ -69,6 +69,12 @@ class ProductProvider extends Component {
     })
   };
 
+  openSUModal = () => {
+    this.setState( () => {
+      return {modalOpen: true}
+    })
+  };
+
   closeModal = () => {
     this.setState( () => {
       return {modalOpen: false}

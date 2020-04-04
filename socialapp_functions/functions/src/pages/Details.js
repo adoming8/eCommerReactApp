@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ProductConsumer } from "../context";
+import { ProductConsumer } from "../contextApi";
 import { Link } from "react-router-dom";
 import { ButtonStyle } from "../components/ButtonStyle";
 
@@ -46,7 +46,7 @@ export default class Details extends Component {
                   </p>
                   <p className="text-muted lead">{info}</p>
                   {/* buttons section */}
-                  <Link to="/" className="ml-auto">
+                  <Link to="/products" className="ml-auto">
                     <ButtonStyle>
                       Back to Product
                     </ButtonStyle>
